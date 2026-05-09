@@ -42,9 +42,11 @@
                 AROS:false,
                 wait_for_kickstart_injection:true,
                 navbar:false,
-                wide:true,
+                wide:false,
                 border:false,
                 port2:true,
+	    	floppy_drives=1,
+	    	floppy_drive_speed=8,
             }; 
             vAmigaWeb_player.load(this,encodeURIComponent(JSON.stringify(config)));
             return false;"		
