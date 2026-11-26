@@ -1,0 +1,61 @@
+<html>
+<head>
+
+<script src="scripts/vAmigaWeb_player.js"></script>
+
+<style>
+	body {
+            background-color: black;
+	    color: white;
+	}	
+        #player_container {
+            background-color: black;
+        }
+        #vAmigaWeb {
+            border:none;
+        }
+        .player_icon_btn {
+            background-color: transparent;
+            color: white;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .btn_play {
+            color: #2575ff;
+            cursor: pointer;
+        }
+</style>
+</head>
+
+<body>
+<div>
+        <img style="width:60vw" src="images/tlu.png"
+            ontouchstart="touched=true"
+            onclick="
+            vAmigaWeb_player.samesite_file={
+                kickstart_rom_url: 'ks/aros.bin',
+		        kickstart_ext_url: 'ks/aros_ext.bin',
+                url:'adfs/intro.adz',name:'intro.adz'
+            };
+            let touch=(typeof touched!='undefined')?touched:false;touched=false;
+            let config={
+                touch:touch,
+                AROS:false,
+                wait_for_kickstart_injection:true,
+                navbar:false,
+                wide:false,
+                border:false,
+                port2:true,
+	    	    floppy_drives:1,
+	    	    floppy_drive_speed:8,
+            }; 
+            vAmigaWeb_player.load(this,encodeURIComponent(JSON.stringify(config)));
+            return false;"		
+        />
+
+
+<br>
+intro test! <br>
+
+</body>
+</html>
